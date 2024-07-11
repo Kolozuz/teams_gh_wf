@@ -1,0 +1,101 @@
+{
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Github Event",
+                    "weight": "bolder",
+                    "style": "heading"
+                    
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "@{convertFromUtc(utcNow(), 'SA Pacific Standard Time', 'g')}",
+                    "spacing": "none",
+                    "weight": "bolder",
+                    "size": "small",
+                    "isSubtle": true
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "**[@{outputs('repoInfo')['full_name']}]**",
+                    "wrap": true
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "New commit **\"@{outputs('head_commit')['message']}\"** at **[@{triggerBody()['ref']}]**",
+                    "wrap": true
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        
+                        {
+                            "title": "no se:",
+                            "value": "placeholder"
+                        },
+                        {
+                            "title": "que poner:",
+                            "value": "placeholder"
+                        },
+                        {
+                            "title": "aquí aun:",
+                            "value": "dev_tools"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "@{variables('senderInfo')['avatar_url']}",
+                                    "altText": "sender user profile picture",
+                                    "size": "small",
+                                    "style": "person"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "@{variables('senderInfo')['login']}",
+                                    "weight": "bolder",
+                                    "wrap": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.OpenUrl",
+            "title": "Check changes in GitHub",
+            "url": "@{outputs('head_commit')['url']}"
+        }
+    ]
+}

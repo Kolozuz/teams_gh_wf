@@ -1,0 +1,99 @@
+{
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Github Event",
+                    "weight": "bolder",
+                    "style": "heading"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "01/01/2024",
+                    "spacing": "none",
+                    "weight": "bolder",
+                    "size": "small",
+                    "isSubtle": true
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Repo Name",
+                    "wrap": true
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Issue #1 - My 1st Issue was updated",
+                    "wrap": true
+                },
+                {
+                    "type": "FactSet",
+                    "facts": [
+                        {
+                            "title": "Tags:",
+                            "value": "enhancement, bug, documentation"
+                        },
+                        {
+                            "title": "Assigned to:",
+                            "value": "Kolozuz, juanjose"
+                        },
+                        {
+                            "title": "Project:",
+                            "value": "project name"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "https://avatars.githubusercontent.com/u/110570465",
+                                    "altText": "sender user profile picture",
+                                    "size": "small",
+                                    "style": "person"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Kolozuz",
+                                    "weight": "bolder",
+                                    "wrap": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.OpenUrl",
+            "title": "Open in GitHub",
+            "url": "https://adaptivecards.io"
+        }
+    ]
+}
