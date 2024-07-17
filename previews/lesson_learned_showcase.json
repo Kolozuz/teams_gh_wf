@@ -15,18 +15,20 @@
                                     "type": "TextBlock",
                                     "text": "Lesson Learned #12",
                                     "weight": "bolder",
-                                    "size": "medium"
+                                    "size": "medium",
+                                    "color":"accent"
                                 },
                                 {
                                     "type": "TextBlock",
                                     "text": "**Connecting to Azure DevOps API**",
                                     "spacing": "none",
                                     "wrap": true,
-                                    "style": "heading"
+                                    "style": "heading",
+                                    "size": "large"
                                 },
                                 {
                                     "type": "TextBlock",
-                                    "text": "Submitted {{DATE(2024-01-01T06:00:00Z, SHORT)}} by **Kolozuz**",
+                                    "text": "Submitted **{{DATE(2024-01-01T06:00:00Z, SHORT)}}** by **Kolozuz**",
                                     "spacing": "none",
                                     "weight": "bolder",
                                     "size": "small",
@@ -67,7 +69,6 @@
                     "text": "General guidelines for a straightforward connection with the Azure DevOps API",
                     "wrap": true,
                     "spacing": "none"
-
                 },
                 {
                     "type": "TextBlock",
@@ -84,19 +85,51 @@
             ]
         },
         {
-            "type": "FactSet",
-            "facts": [
+            "type": "ColumnSet",
+            "columns": [
                 {
-                    "title": "Impact:",
-                    "value": "Low"
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Impact",
+                            "weight": "bolder",
+                            "size": "medium"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Medium",
+                            "separator": true,
+                            "spacing": "small",
+                            "color":"accent"
+
+                        }
+                    ],
+                    "width": "auto"
                 },
                 {
-                    "title": "Area:",
-                    "value": "Dev Team"
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Area",
+                            "weight": "bolder",
+                            "size": "medium"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Dev Team",
+                            "separator": true,
+                            "spacing": "small",
+                            "color":"accent"
+                        }
+                    ],
+                    "separator": true,
+                    "width": "auto"
                 }
             ],
-            "separator": false,
-            "spacing":"large"
+            "separator": true,
+            "spacing": "large"
         }
     ],
     "actions": [
