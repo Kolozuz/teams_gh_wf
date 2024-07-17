@@ -1,0 +1,76 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "lang": "es",
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "https://i.imgur.com/Hq4Nmve.jpeg",
+                                    "altText": "company logo",
+                                    "size": "medium",
+                                    "style": "person"
+                                }
+                            ],
+                            "width": "auto"
+                        },
+                        {
+                            "type": "Column",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Team Name",
+                                    "weight": "bolder",
+                                    "size": "large",
+                                    "style": "heading"
+                                },
+                                {
+                                    "spacing": "none",
+                                    "type": "TextBlock",
+                                    "text": "Activity Name - YYYY/MM/DD hh:mm",
+                                    "weight": "bolder",
+                                    "isSubtle": true,
+                                    "size": "medium",
+                                    "wrap": true
+                                }
+                            ],
+                            "width": "auto"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "style": "text",
+                    "type": "Input.Text",
+                    "label": "Question (e.g What are your thoughts on unicorns?)",
+                    "id": "answer",
+                    "spacing": "small",
+                    "isMultiline": false,
+                    "placeholder": "Enter your answer",
+                    "regex": "[A-Za-z.]",
+                    "isRequired": true,
+                    "errorMessage": "Not a valid answer"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Submit"
+        }
+    ]
+}

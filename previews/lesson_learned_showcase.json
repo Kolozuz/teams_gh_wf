@@ -1,0 +1,109 @@
+{
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Lesson Learned #12",
+                                    "weight": "bolder",
+                                    "size": "medium"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "**Connecting to Azure DevOps API**",
+                                    "spacing": "none",
+                                    "wrap": true,
+                                    "style": "heading"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Submitted {{DATE(2024-01-01T06:00:00Z, SHORT)}} by **Kolozuz**",
+                                    "spacing": "none",
+                                    "weight": "bolder",
+                                    "size": "small",
+                                    "isSubtle": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "https://i.imgur.com/Hq4Nmve.jpeg",
+                                    "altText": "company logo",
+                                    "size": "medium",
+                                    "style": "person"
+                                }
+                            ],
+                            "width": "auto"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "separator": true,
+            "spacing": "large",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Description",
+                    "weight": "bolder",
+                    "size": "medium"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "General guidelines for a straightforward connection with the Azure DevOps API",
+                    "wrap": true,
+                    "spacing": "none"
+
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Implemented Actions",
+                    "weight": "bolder",
+                    "size": "medium"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Follow the next steps:\n - **L:** the way u look at me\n - **O:** only one I see\n - **V:** Very, very, extraordinary \n - **E:** even more than anyone that you adore",
+                    "wrap": true,
+                    "spacing": "none"
+                }
+            ]
+        },
+        {
+            "type": "FactSet",
+            "facts": [
+                {
+                    "title": "Impact:",
+                    "value": "Low"
+                },
+                {
+                    "title": "Area:",
+                    "value": "Dev Team"
+                }
+            ],
+            "separator": false,
+            "spacing":"large"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.OpenUrl",
+            "title": "Open in SharePoint",
+            "url": "https://adaptivecards.io"
+        }
+    ]
+}
