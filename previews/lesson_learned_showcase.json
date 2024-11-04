@@ -45,17 +45,6 @@
                                     "altText": "company logo",
                                     "size": "medium",
                                     "style": "person"
-                                },
-                                {
-                                    "type": "TextBlock",
-                                    "text": "<img src='https://i.imgur.com/Hq4Nmve.jpeg'> "
-                                },
-                                {
-                                    "type": "Image",
-                                    "url": "https://i.imgur.com/Hq4Nmve.jpeg",
-                                    "altText": "company logo",
-                                    "size": "medium",
-                                    "style": "person"
                                 }
                             ],
                             "width": "auto"
