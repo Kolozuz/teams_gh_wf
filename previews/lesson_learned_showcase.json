@@ -45,6 +45,17 @@
                                     "altText": "company logo",
                                     "size": "medium",
                                     "style": "person"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "<img src='https://i.imgur.com/Hq4Nmve.jpeg'> "
+                                },
+                                {
+                                    "type": "Image",
+                                    "url": "https://i.imgur.com/Hq4Nmve.jpeg",
+                                    "altText": "company logo",
+                                    "size": "medium",
+                                    "style": "person"
                                 }
                             ],
                             "width": "auto"
@@ -60,7 +71,7 @@
             "items": [
                 {
                     "type": "TextBlock",
-                    "text": "Description",
+                    "text": "**Description**",
                     "weight": "bolder",
                     "size": "medium"
                 },
@@ -72,13 +83,25 @@
                 },
                 {
                     "type": "TextBlock",
-                    "text": "Implemented Actions",
+                    "text": "**Implemented Actions**",
                     "weight": "bolder",
                     "size": "medium"
                 },
                 {
                     "type": "TextBlock",
                     "text": "Follow the next steps:\n - **L:** the way u look at me\n - **O:** only one I see\n - **V:** Very, very, extraordinary \n - **E:** even more than anyone that you adore",
+                    "wrap": true,
+                    "spacing": "none"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "**Recommendations**",
+                    "weight": "bolder",
+                    "size": "medium"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "None",
                     "wrap": true,
                     "spacing": "none"
                 }
