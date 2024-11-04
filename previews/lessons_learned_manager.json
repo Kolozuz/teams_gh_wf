@@ -1,0 +1,303 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "msteams": {
+        "width": "Full"
+    },
+    "version": "1.0",
+    "lang": "es",
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Team Name",
+                                    "weight": "bolder",
+                                    "size": "large",
+                                    "style": "heading"
+                                },
+                                {
+                                    "spacing": "none",
+                                    "type": "TextBlock",
+                                    "text": "Lessons Learned management tool",
+                                    "weight": "bolder",
+                                    "isSubtle": true,
+                                    "size": "medium",
+                                    "wrap": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "https://i.imgur.com/Hq4Nmve.jpeg",
+                                    "altText": "company logo",
+                                    "size": "medium",
+                                    "style": "person"
+                                }
+                            ],
+                            "width": "auto"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.ShowCard",
+            "title": "Add a new lesson 📗",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "ColumnSet",
+                        "columns": [
+                            {
+                                "type": "Column",
+                                "items": [
+                                    {
+                                        "type": "Input.ChoiceSet",
+                                        "id": "selectedArea",
+                                        "style": "compact",
+                                        "isMultiSelect": false,
+                                        "label": "Area",
+                                        "isRequired": true,
+                                        "errorMessage": "This is a required field",
+                                        "placeholder": "Select an option",
+                                        "choices": [
+                                            {
+                                                "title": "Option 1",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "title": "Option 2",
+                                                "value": "2"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Column",
+                                "items": [
+                                    {
+                                        "type": "Input.ChoiceSet",
+                                        "id": "selectedImpact",
+                                        "style": "compact",
+                                        "isMultiSelect": false,
+                                        "label": "Impact",
+                                        "isRequired": true,
+                                        "errorMessage": "This is a required field",
+                                        "placeholder": "Select an option",
+                                        "choices": [
+                                            {
+                                                "title": "None",
+                                                "value": "0"
+                                            },
+                                            {
+                                                "title": "Low",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "title": "Medium",
+                                                "value": "2"
+                                            },
+                                            {
+                                                "title": "Big",
+                                                "value": "3"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "width": "auto"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Input.Text",
+                        "label": "Titulo",
+                        "id": "lessonTitle",
+                        "placeholder": "Type the lesson's title",
+                        "errorMessage": "This is a required field",
+                        "isRequired": true,
+                        "maxLength": 150
+                    },
+                    {
+                        "type": "Input.Text",
+                        "label": "Descripción",
+                        "id": "lessonDescription",
+                        "placeholder": "Type the lesson's description",
+                        "errorMessage": "This is a required field",
+                        "isMultiline": true,
+                        "isRequired": true,
+                        "maxLength": 500
+                    },
+                    {
+                        "type": "Input.Text",
+                        "label": "Implemented actions (markdown syntax supported)",
+                        "id": "lessonImplementedActions",
+                        "placeholder": "Describe the implemented actions",
+                        "errorMessage": "This is a required field",
+                        "isMultiline": true,
+                        "isRequired": true,
+                        "maxLength": 1000
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "title": "Crear",
+                        "data": {
+                            "neat": "true"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Action.ShowCard",
+            "title": "Share a lesson 📩 (WIP)",
+            "isEnabled": false,
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "TextBlock",
+                        "text": "Area"
+                    },
+                    {
+                        "type": "ActionSet",
+                        "actions": [
+                            {
+                                "type": "Action.ToggleVisibility",
+                                "title": "Area 1",
+                                "targetElements": [
+                                    {
+                                        "elementId": "selectedLessonToShare1",
+                                        "isVisible": true
+                                    },
+                                    {
+                                        "elementId": "selectedLessonToShare2",
+                                        "isVisible": false
+                                    },
+                                    {
+                                        "elementId": "recipientActionSet",
+                                        "isVisible": true
+                                    },
+                                    {
+                                        "elementId": "submit"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "Action.ToggleVisibility",
+                                "title": "Area 2",
+                                "targetElements": [
+                                    {
+                                        "elementId": "selectedLessonToShare1",
+                                        "isVisible": false
+                                    },
+                                    {
+                                        "elementId": "selectedLessonToShare2",
+                                        "isVisible": true
+                                    },
+                                    {
+                                        "elementId": "recipientActionSet",
+                                        "isVisible": true
+                                    },
+                                    {
+                                        "elementId": "submit"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Input.ChoiceSet",
+                        "id": "selectedLessonToShare1",
+                        "style": "compact",
+                        "isMultiSelect": false,
+                        "label": "Area 1 - Search lesson",
+                        "isVisible": false,
+                        "isRequired": true,
+                        "errorMessage": "This is a required field",
+                        "placeholder": "Type the name of the lesson to share",
+                        "spacing":"large",
+                        "choices": []
+                    },
+                    {
+                        "type": "Input.ChoiceSet",
+                        "id": "selectedLessonToShare2",
+                        "style": "compact",
+                        "isMultiSelect": false,
+                        "label": "Area 2 - Search lesson",
+                        "isVisible": false,
+                        "isRequired": true,
+                        "errorMessage": "This is a required field",
+                        "placeholder": "Type the name of the lesson to share",
+                        "spacing":"large",
+                        "choices": []
+                    },
+                    {
+                        "type": "Container",
+                        "id": "recipientActionSet",
+                        "spacing":"large",
+                        "isVisible": false,
+                        "items": [
+                            {
+                                "type": "TextBlock",
+                                "text": "Compartir en"
+                            },
+                            {
+                                "type": "ActionSet",
+                                "actions": [
+                                    {
+                                        "type": "Action.ShowCard",
+                                        "title": "Chat de grupo",
+                                        "card": {
+                                            "type": "AdaptiveCard",
+                                            "body": [
+                                                {
+                                                    "type": "Container",
+                                                    "items": [
+                                                        {
+                                                            "type": "Input.ChoiceSet",
+                                                            "id": "selectedGroupRecipient",
+                                                            "style": "compact",
+                                                            "isMultiSelect": false,
+                                                            "label": "Grupo",
+                                                            "isRequired": true,
+                                                            "errorMessage": "This is a required field",
+                                                            "placeholder": "Ingresa el nombre del grupo destinatario",
+                                                            "choices": []
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "actions": [
+                                                {
+                                                    "type": "Action.Submit",
+                                                    "title": "Enviar"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
