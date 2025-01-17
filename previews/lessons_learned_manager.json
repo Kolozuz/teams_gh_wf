@@ -128,8 +128,9 @@
                         "label": "Titulo",
                         "id": "lessonTitle",
                         "placeholder": "Type the lesson's title",
-                        "errorMessage": "This is a required field",
                         "isRequired": true,
+                        "regex": "[A-Z][a-z]",
+                        "errorMessage": "Please enter a valid title",
                         "maxLength": 150
                     },
                     {
@@ -137,9 +138,9 @@
                         "label": "Descripción",
                         "id": "lessonDescription",
                         "placeholder": "Type the lesson's description",
-                        "errorMessage": "This is a required field",
                         "isMultiline": true,
                         "isRequired": true,
+                        "errorMessage": "Please enter a valid description",
                         "maxLength": 500
                     },
                     {
@@ -147,9 +148,9 @@
                         "label": "Implemented actions (markdown syntax supported)",
                         "id": "lessonImplementedActions",
                         "placeholder": "Describe the implemented actions",
-                        "errorMessage": "This is a required field",
                         "isMultiline": true,
                         "isRequired": true,
+                        "errorMessage": "Please describe the implemented actions",
                         "maxLength": 1000
                     }
                 ],
