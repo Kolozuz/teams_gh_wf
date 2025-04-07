@@ -1,0 +1,135 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/1.5.0/adaptive-card.json",
+    "version": "1.5",
+    "body": [
+        {
+            "type": "TextBlock",
+            "size": "default",
+            "weight": "default",
+            "text": "@{variables('GreetingMessage')} @{variables('DataConsultorAsignado')['Nombre']}, ",
+            "id": "textLabel1"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Te fue asignado el siguiente caso para su revisión:",
+            "wrap": true,
+            "id": "textLabel2"
+        },
+        {
+            "type": "Table",
+            "id": "table1",
+            "columns": [
+                {
+                    "width": 1
+                }
+            ],
+            "rows": [
+                {
+                    "type": "TableRow",
+                    "id": "tableRow1",
+                    "cells": [
+                        {
+                            "type": "TableCell",
+                            "id": "tableCell1",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "id": "textLabel3",
+                                    "wrap": true,
+                                    "text": "**Detalle**"
+                                }
+                            ],
+                            "style": "accent"
+                        }
+                    ]
+                },
+                {
+                    "type": "TableRow",
+                    "id": "tableRow2",
+                    "cells": [
+                        {
+                            "type": "TableCell",
+                            "id": "tableCell4",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "id": "textLabel6",
+                                    "wrap": true,
+                                    "text": "[@{outputs('Patched_message_text')}](@{item()?['linkToMessage']})"
+                                }
+                            ],
+                            "style": "emphasis"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.ShowCard",
+            "title": "Reasignar",
+            "id": "reassignment_screen",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "Input.ChoiceSet",
+                        "id": "dropDown1",
+                        "choices": [],
+                        "label": "Consultor",
+                        "placeholder": "John Doe",
+                        "style": "compact"
+                    },
+                    {
+                        "type": "Input.Text",
+                        "id": "textInput1",
+                        "label": "Motivo de reasignación",
+                        "isMultiline": true
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "title": "Enviar",
+                        "tooltip": "Send",
+                        "data": {
+                            "action_performed": "reassign"
+                        }
+                    }
+                ]
+            },
+            "mode": "primary",
+            "style": "positive"
+        },
+        {
+            "type": "Action.ShowCard",
+            "title": "Descartar",
+            "id": "discard_screen",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "Input.Text",
+                        "id": "textInput2",
+                        "label": "Motivo de descarte",
+                        "isMultiline": true,
+                        "isVisible": true
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "title": "Enviar",
+                        "tooltip": "Send",
+                        "data": {
+                            "action_performed": "discard"
+                        }
+                    }
+                ]
+            },
+            "style": "destructive"
+        }
+    ]
+}

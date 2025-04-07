@@ -1,0 +1,118 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.5",
+    "msteams": {
+        "width": "Full"
+    },
+    "body": [
+        {
+            "type": "ColumnSet",
+            "id": "columnSet3",
+            "columns": [
+                {
+                    "type": "Column",
+                    "id": "column5",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "id": "textLabel5",
+                            "wrap": true,
+                            "text": "@{if(and(greater(variables('Hora actual'), variables('Noon')), less(variables('Hora actual'), variables('Night'))),'Buenas tardes,', 'Buenas noches,')} tu solicitud está siendo atendida."
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "id": "column6",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "id": "image1",
+                            "url": "https://i.imgur.com/xU1Pgha.png",
+                            "style": "person",
+                            "size": "small"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Table",
+            "id": "table1",
+            "columns": [
+                {
+                    "width": 2
+                },
+                {
+                    "width": 3
+                }
+            ],
+            "rows": [
+                {
+                    "type": "TableRow",
+                    "cells": [
+                        {
+                            "type": "TableCell",
+                            "style": "accent",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "id": "textLabel1",
+                                    "wrap": true,
+                                    "text": "**Consultor asignado**",
+                                    "weight": "Default"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableCell",
+                            "style": "accent",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "id": "textLabel2",
+                                    "wrap": true,
+                                    "text": "**Correo**",
+                                    "weight": "Default"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "TableRow",
+                    "cells": [
+                        {
+                            "type": "TableCell",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "id": "textLabel3",
+                                    "wrap": true,
+                                    "text": "@{variables('DataConsultorAsignado')['Nombre']}"
+                                }
+                            ],
+                            "style": "emphasis"
+                        },
+                        {
+                            "type": "TableCell",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "id": "textLabel4",
+                                    "wrap": true,
+                                    "text": "[@{variables('DataConsultorAsignado')['Email']}](mailto:@{variables('DataConsultorAsignado')['Email']})"
+                                }
+                            ],
+                            "style": "emphasis"
+                        }
+                    ]
+                }
+            ],
+            "gridStyle": "accent"
+        }
+    ]
+}

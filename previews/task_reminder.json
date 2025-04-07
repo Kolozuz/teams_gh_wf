@@ -1,0 +1,68 @@
+{
+  "type": "AdaptiveCard",
+  "msteams": {
+    "width": "Full"
+  },
+  "version": "1.0",
+  "lang": "es",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Reminder card",
+                  "weight": "Bolder",
+                  "size": "Large",
+                  "style": "heading"
+                },
+                {
+                  "spacing": "None",
+                  "type": "TextBlock",
+                  "text": "Team name - {{DATE(2024-01-01T00:00:00Z, SHORT)}}",
+                  "weight": "Bolder",
+                  "isSubtle": true,
+                  "size": "Medium",
+                  "wrap": true
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "items": [
+                {
+                  "type": "Image",
+                  "url": "https://i.imgur.com/Hq4Nmve.jpeg",
+                  "altText": "company/team logo",
+                  "size": "medium",
+                  "style": "person"
+                }
+              ],
+              "width": "auto"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "id": "textLabel1",
+      "wrap": true,
+      "text": "Good morning team, its Friday! 🎉\nSo please remember to <action> as usual before finishing your workday. \n\nHappy Weekend! 🎊😊"
+    },
+    {
+      "type": "Image",
+      "id": "image1",
+      "url": "https://i.imgur.com/Hq4Nmve.jpeg",
+      "size": "large",
+      "height": "250px"
+    }
+  ],
+  "actions": []
+}

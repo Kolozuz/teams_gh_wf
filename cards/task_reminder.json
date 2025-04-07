@@ -1,0 +1,75 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "msteams": {
+      "width": "Full"
+    },
+    "version": "1.0",
+    "lang": "es",
+    "body": [
+      {
+        "type": "Container",
+        "items": [
+          {
+            "type": "ColumnSet",
+            "columns": [
+              {
+                "type": "Column",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "text": "**Task Reminder**",
+                    "weight": "default",
+                    "size": "Large",
+                    "style": "heading"
+                  },
+                  {
+                    "spacing": "None",
+                    "type": "TextBlock",
+                    "weight": "Bolder",
+                    "isSubtle": true,
+                    "size": "Medium",
+                    "wrap": true,
+                    "text": "Team's name - {{DATE(2024-01-01T00:00:00Z, SHORT)}}"
+                  }
+                ]
+              },
+              {
+                "type": "Column",
+                "items": [
+                  {
+                    "type": "Image",
+                    "url": "https://i.imgur.com/xU1Pgha.png",
+                    "altText": "company logo",
+                    "size": "medium",
+                    "style": "person"
+                  }
+                ],
+                "width": "auto"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TextBlock",
+        "id": "textLabel1",
+        "wrap": true,
+        "text": "@{outputs('Message')['TextValue']}",
+        "weight": "Bolder"
+      },
+      {
+        "type": "Image",
+        "id": "image1",
+        "url": "@{outputs('Image')['url']}",
+        "width": "220px"
+      }
+    ],
+    "actions": [],
+    "refresh": {
+      "action": {
+        "verb": "show",
+        "type": "Action.Execute"
+      }
+    }
+  }

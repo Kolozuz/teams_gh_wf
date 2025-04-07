@@ -1,0 +1,170 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.5",
+    "msteams": {
+        "width": "Full"
+    },
+    "body": [
+        {
+            "type": "TextBlock",
+            "id": "textLabel1",
+            "wrap": true,
+            "text": "**Reminder**: The following change order must be @{if(equals(item()?['ACTION'],'EXCECUTE'),'executed','checked')} in @{outputs('TimeLeftMessage')}"
+        },
+        {
+            "type": "Table",
+            "id": "table1",
+            "columns": [
+                {
+                    "width": 2
+                },
+                {
+                    "width": 5
+                },
+                {
+                    "width": 4
+                },
+                {
+                    "width": 4
+                }
+            ],
+            "rows": [
+                {
+                    "type": "TableRow",
+                    "cells": [
+                        {
+                            "type": "TableCell",
+                            "style": "accent",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "id": "textLabel2",
+                                    "text": "**#CO**",
+                                    "weight": "Default"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableCell",
+                            "style": "accent",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "id": "textLabel3",
+                                    "wrap": true,
+                                    "text": "**Description**"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableCell",
+                            "style": "accent",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "id": "textLabel4",
+                                    "wrap": true,
+                                    "text": "**Date/Time**"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableCell",
+                            "style": "accent",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "id": "textLabel5",
+                                    "wrap": true,
+                                    "text": "**Asignee**"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "TableRow",
+                    "cells": [
+                        {
+                            "type": "TableCell",
+                            "style": "emphasis",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "id": "textLabel6",
+                                    "wrap": true,
+                                    "text": "@{item()?['ID']}"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableCell",
+                            "style": "emphasis",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "id": "textLabel7",
+                                    "wrap": true,
+                                    "text": "@{item()?['DESCRIPTION']}"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableCell",
+                            "style": "emphasis",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "id": "textLabel8",
+                                    "wrap": true,
+                                    "text": "@{item()?['TEXTDATE']}"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "TableCell",
+                            "style": "emphasis",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "id": "textLabel9",
+                                    "wrap": true,
+                                    "text": "@{item()?['ASIGNEE']}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Table",
+            "id": "table1",
+            "columns": [
+                {
+                    "width": 1
+                }
+            ],
+            "rows": [
+                {
+                    "type": "TableRow",
+                    "cells": [
+                        {
+                            "type": "TableCell",
+                            "style": "warning", 
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "id": "textLabel2",
+                                    "text": "⚠ Don't forget to send the email pointing the start and end of the change order.",
+                                    "weight": "Default"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,128 @@
+{
+  "type": "AdaptiveCard",
+  "msteams": {
+    "width": "Full"
+  },
+  "body": [
+    {
+      "type": "ColumnSet",
+      "id": "columnSet3",
+      "columns": [
+        {
+          "type": "Column",
+          "id": "column5",
+          "width": "stretch",
+          "items": [
+            {
+              "type": "TextBlock",
+              "id": "textLabel5",
+              "wrap": true,
+              "text": "Good morning|afternoon|evening our request is being processed."
+            }
+          ],
+          "bleed": false,
+          "verticalContentAlignment": "bottom"
+        },
+        {
+          "type": "Column",
+          "id": "column6",
+          "width": "auto",
+          "items": [
+            {
+              "type": "Image",
+              "id": "business_logo",
+              "url": "https://i.imgur.com/Hq4Nmve.jpeg",
+              "style": "person",
+              "size": "small"
+            }
+          ],
+          "bleed": false
+        }
+      ]
+    },
+    {
+      "type": "Table",
+      "id": "table1",
+      "columns": [
+        {
+          "width": 2
+        },
+        {
+          "width": 3
+        }
+      ],
+      "rows": [
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "style": "accent",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "id": "textLabel1",
+                  "wrap": true,
+                  "text": "**Assigned Consultant**",
+                  "weight": "default"
+                }
+              ]
+            },
+            {
+              "type": "TableCell",
+              "style": "accent",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "id": "textLabel2",
+                  "wrap": true,
+                  "text": "**Email**",
+                  "weight": "default"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TableRow",
+          "cells": [
+            {
+              "type": "TableCell",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "id": "textLabel3",
+                  "wrap": true,
+                  "text": "John Doe"
+                }
+              ],
+              "style": "emphasis"
+            },
+            {
+              "type": "TableCell",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "id": "textLabel4",
+                  "wrap": true,
+                  "text": "[jdthegoat@hipnet.es](mailto:jdthegoat@hipnet.es)"
+                }
+              ],
+              "style": "emphasis"
+            }
+          ]
+        }
+      ],
+      "gridStyle": "accent",
+      "spacing": "default"
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.5",
+  "refresh": {
+    "action": {
+      "verb": "show",
+      "type": "Action.Execute"
+    }
+  }
+}
